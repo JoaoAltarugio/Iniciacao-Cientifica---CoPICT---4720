@@ -1,26 +1,33 @@
-# Iniciacao-Cientifica---CoPICT---4720
+# Aprendizado Profundo para Previsão em Séries Temporais: Um Estudo Comparativo entre Modelos de Redes Neurais
 
-Previsão de Séries Temporais Financeiras com Deep Learning
+Este repositório contém o código-fonte do projeto de Iniciação Científica e Tecnológica (ICTSR) **"Aprendizado Profundo para Previsão em Séries Temporais: Um Estudo Comparativo entre Modelos de Redes Neurais"**, desenvolvido por João Eduardo Batelochi Altarugio, sob orientação do Prof. Dr. Alexandre Luis Magalhaes Levada na Universidade Federal de São Carlos (UFSCar). O projeto foi fomentado pela Coordenadoria dos Programas de Iniciação Científica e Tecnológica.
 
-Este repositório contém a implementação de modelos de deep learning para previsão de séries temporais financeiras, com foco no ETF BOVA11. O projeto utiliza arquiteturas de redes neurais como LSTM, CNN e, em breve, Transformers, para prever os preços futuros do ativo com base em dados históricos. O código foi desenvolvido em Python utilizando os frameworks Keras e PyTorch.
+---
 
-Descrição do Projeto
-O objetivo deste projeto é comparar diferentes arquiteturas de redes neurais para prever a tendência de preços do ETF BOVA11. Modelos como Redes Neurais Recorrentes (RNN), LSTMs, CNNs e modelos baseados em Transformers serão comparados em termos de desempenho, com foco na acurácia das previsões de preços futuros.
+## Resumo do Projeto
 
-Dados Utilizados
-Os dados utilizados para treinamento e teste do modelo foram extraídos da API do Yahoo Finance, cobrindo mais de 17 anos de históricos diários de preços do ETF BOVA11. O conjunto de dados contém 6360 amostras de valores de pregão, e foi enriquecido com métricas adicionais, como:
+A análise de séries temporais financeiras é crucial para a compreensão e previsão do comportamento do mercado, auxiliando a tomada de decisões estratégicas. Neste contexto, técnicas de aprendizado profundo (deep learning) se mostram promissoras devido à sua capacidade de capturar padrões complexos e não lineares nos dados.
 
-MA7 (Média Móvel de 7 dias)
+O estudo explora dois cenários de aprendizado profundo para a previsão em séries temporais:
 
-EMA (Média Exponencialmente Ponderada)
+- **Cenário (i):** Modelos univariados baseados em Redes Neurais Convolucionais (CNNs) e Redes de Memória de Longo Prazo (LSTMs). Estes modelos usam uma janela de 5 dias para prever os 5 dias seguintes.
 
-FFT_10 (Transformada Rápida de Fourier de 10 períodos)
+- **Cenário (ii):** Um modelo multivariado LSTM, que incorpora variáveis qualitativas de análise de sentimento de notícias macroeconômicas. Para isso, utiliza o modelo de linguagem FinBERT-pt-Br em notícias da base de dados GDELT. Este modelo usa uma janela de 8 dias para prever o dia seguinte.
 
-ARIMA_Pred (Previsões ARIMA)
+Os experimentos foram realizados com dados do ETF BOVA11, coletados via Yahoo Finance, e mais de 300 mil notícias macroeconômicas. Os resultados indicaram que os modelos CNN e LSTM superaram a linha de base (que simplesmente repetia a janela de entrada). Além disso, a adição da análise de sentimentos melhorou a capacidade preditiva do modelo multivariado.
 
-Arquiteturas de Redes Neurais
-LSTM (Long Short-Term Memory): Escolhida pela sua capacidade de capturar dependências de longo prazo em séries temporais.
+---
 
-CNN (Redes Neurais Convolucionais): Adaptada para prever padrões temporais, capturando variações locais e rápidas.
+## Conteúdo do Repositório
 
-Transformer (em progresso): Planeja-se a implementação e comparação de redes baseadas em Transformer como BERT e GPT para a previsão de séries temporais financeiras.
+- **Coleta e Pré-processamento de Dados:** Scripts para coleta de dados financeiros do ETF Ibovespa usando a API do Yahoo Finance e coleta de notícias macroeconômicas do projeto GDELT via Google Cloud BigQuery.
+
+- **Anotação de Sentimento:** Código para análise de sentimento das notícias utilizando o modelo de linguagem FinBERT-pt-Br.
+
+- **Arquiteturas de Modelos:** Implementações das arquiteturas de redes neurais univariadas e multivariadas, incluindo CNN e LSTM, prontas para uso.
+
+---
+
+## Observação sobre os dados
+
+Embora os códigos de coleta de dados e as arquiteturas dos modelos estejam disponíveis, a base de dados completa de notícias macroeconômicas não pôde ser hospedada neste repositório do GitHub devido ao seu grande volume. Por exemplo, a base de dados do GDELT de 2015 excede 2,5 TB, tornando o compartilhamento inviável. No entanto, os scripts de coleta permitem que a base de dados seja replicada para reprodução dos experimentos.
