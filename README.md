@@ -30,4 +30,4 @@ Os experimentos foram realizados com dados do ETF BOVA11, coletados via Yahoo Fi
 
 ## Observação sobre os dados
 
-Embora os códigos de coleta de dados e as arquiteturas dos modelos estejam disponíveis, a base de dados completa de notícias macroeconômicas não pôde ser hospedada neste repositório do GitHub devido ao seu grande volume. Por exemplo, a base de dados do GDELT de 2015 excede 2,5 TB, tornando o compartilhamento inviável. No entanto, os scripts de coleta permitem que a base de dados seja replicada para reprodução dos experimentos.
+Embora os códigos de coleta de dados e as arquiteturas dos modelos estejam disponíveis, a base de dados completa de notícias macroeconômicas não pôde ser hospedada neste repositório do GitHub devido ao seu grande volume. No entanto, os scripts de coleta permitem que a base de dados seja replicada para reprodução dos experimentos.
